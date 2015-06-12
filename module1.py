@@ -1,0 +1,6 @@
+dico=open('dico.txt', 'r')
+dicoM=" ".join(("".join(dico.readlines())).split("\n"))
+dico.close()
+dico.open('dico2.txt','w')
+dico.write(dicoM)
+dico.close()
