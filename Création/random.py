@@ -11,7 +11,7 @@ tr=1
 print('mot de ', len(wd), 'lettres', 'commencant par', wd[0])
 verif=[]
 #print(wd)
-usr=input('entrer un mot ')
+usr=raw_input('entrer un mot : ')
 pos=[]
 if wd in list:
     for i in range(0, len(wd)):
@@ -29,7 +29,7 @@ else:
 #    print(wd)
 while usr!=wd:
     verif=[]
-    usr=input('entrer un mot ')
+    usr=raw_input('entrer un mot : ')
     if wd in list:
         pos=wd
         for i in range(0, len(wd)):
