@@ -1,0 +1,3 @@
+debug:ON
+testAll:ON
+fileOutput:OFF
