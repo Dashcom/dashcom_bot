@@ -15,7 +15,7 @@ usr1=[]
 if usr=='DEFINE':
     wd=raw_input('wd ?')
     usr=raw_input('entrer un mot : ')
-if wd in list:
+if usr in list:
     for i in range(0, len(wd)):
         pos.append(wd[i])
         usr1.append(usr[i])
@@ -43,7 +43,7 @@ while usr!=wd:
     pos=[]
     usr1=[]
     usr=raw_input('entrer un mot : ')
-    if wd in list:
+    if usr in list:
         for i in range(0, len(wd)):
             pos.append(wd[i])
             usr1.append(usr[i])
