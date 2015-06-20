@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import numpy
 from numpy import random
-dico=open('../Résolution/dico8.txt', 'r')
+dico=open('../Résolution/Dico_final.txt', 'r')
 list=(dico.readline()).split()
 #print(list)
 wd=list[random.randint(0,len(list))]
