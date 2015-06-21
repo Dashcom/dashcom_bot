@@ -5,6 +5,7 @@ L=raw_input("Premiere lettre : ")
 N=input("Nombre de lettres : ")
 dico=open('Dico8.txt', 'r')
 dico=(dico.readline()).split()
+dico2=dico[:]
 for x in range(0, len(dico)):
 	if dico[x].startswith(L) and len(dico[x])==N:
 		liste.append(dico[x].lower())
@@ -77,5 +78,17 @@ while len(liste)>1:
 			if E==26:
 				liste4.append(liste3[x])
 		liste=liste4[:]
-print(liste[0])
-print(nope)
+if len(liste)>0:
+	print(liste[0])
+else:
+	print("Le mot n'est pas dans le dictionnaire.")
+	aj=raw_input("Quel est ce mot ? : ")
+	dico2.append(aj)
+if len(nope)>0:
+	for x in range(0, len(dico)):
+		for y in range(0,len(nope)):
+			if dico[x]==nope[y]:
+				dico2.remove(dico[x])
+dico2.sort()
+dico3=open("Dico8.txt",'w')
+dico3.write(" ".join(dico2))
