@@ -18,7 +18,7 @@ try:
     if 'sync:On\n' in config:
         sync='True'
         try:
-            syncfile=open('log2.txt', 'r')
+            syncfile=open('../Résolution/log2.txt', 'r')
         except NameError:
             sync='False'
             pass
