@@ -10,8 +10,9 @@ try:
         debug='True'
     if 'testAll:ON\n' in config:
         testAll='True'
-    if 'fileOutput:ON' in config:
+    if 'fileOutput:ON\n' in config:
         fileOutput='True'
+        log=open('log.txt', 'w')
 except NameError:
     config=[]
     pass
@@ -53,6 +54,9 @@ if usr in list:
             rm=pos.index(usr1[i])
             pos[rm]=0
     print(verif)
+    if fileOutput=='True':
+        log.append(verif)
+        close(log)
 else:
     print('\'\'')
 if debug=='True':
