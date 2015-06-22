@@ -1,3 +1,6 @@
 /.project
 *.pyc
 __pycache__
+config.txt
+log.txt
+log2.txt
