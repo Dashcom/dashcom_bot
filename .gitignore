@@ -4,3 +4,5 @@ __pycache__
 Création/log.txt
 Résolution/log2.txt
 Création/config.txt
+
+*.txt
