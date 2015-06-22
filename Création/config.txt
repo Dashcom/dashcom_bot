@@ -1,0 +1,5 @@
+debug:OFF
+testAll:OFF
+fileOutput:ON
+sync:ON
+dont delete this line
