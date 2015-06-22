@@ -13,6 +13,17 @@ try:
     if 'fileOutput:ON\n' in config:
         fileOutput='True'
         log=open('log.txt', 'w')
+        essais=open('essais.txt','a')
+    if 'sync:On\n' in config:
+        sync='True'
+        try:
+            syncfile=open('log2.txt', 'r')
+        except NameError:
+            sync='False'
+            pass
+        except IOError:
+            sync='False'
+            pass
 except NameError:
     config=[]
     pass
@@ -27,10 +38,15 @@ else :
     wd=list[0]
 letter=0
 tr=1
-#nécessité de modifier les print en envoi de tweet
 print('Mot de {} lettres, commencant par {}'.format(len(wd), wd[0]))
+if fileOutput=='True':
+    log.write(len(wd), wd[0])
+    close(log)
 verif=[]
-usr=raw_input('entrer un mot : ')
+if fileOutput=='False':
+    usr=raw_input('entrer un mot : ')
+if fileOutput=='True' and sync=='True':
+        usr=syncfile.readline()
 pos=[]
 usr1=[]
 if debug=='True':
@@ -55,44 +71,21 @@ if usr in list:
             pos[rm]=0
     print(verif)
     if fileOutput=='True':
-        log.append(verif)
+        log.write(''.join(verif))
         close(log)
 else:
     print('\'\'')
+    if fileOutput=='True':
+        log.write('\'\'')
+        close.log
 if debug=='True':
     if usr=='SOLUCE':
         print(wd)
     if usr=='DEFINE':
         wd=raw_input('wd ?')
-while usr!=wd:
-    verif=[]
-    pos=[]
-    usr1=[]
-    usr=raw_input('entrer un mot : ')
-    if usr in list:
-        for i in range(0, len(wd)):
-            pos.append(wd[i])
-            usr1.append(usr[i])
-        for i in range(0, len(wd)):
-            if wd[i]==usr[i]:
-                verif.append(2)
-                pos[i]=0
-                usr1[i]=2
-            else:
-                verif.append(0)
-        for i in range(0, len(pos)):
-            if usr1[i] in pos:
-                verif[i]=1
-                rm=pos.index(usr1[i])
-                pos[rm]=1
-        print(verif)
-    else:
-        print('\'\'')
-    if debug=='True':
-        if usr=='SOLUCE':
-            print(wd)
-    tr=(tr+1)
 print('C\'est bien {}, trouve en {} essais.'.format(usr, tr))
+if fileOutput=='True':
+    essais.write(urs+':'+tr)
 if testAll=='True':
     for i in (1, len(list)):
         wd=list[i]
@@ -100,6 +93,9 @@ if testAll=='True':
         tr=1
         #nécessité de modifier les print en envoi de tweet
         print('Mot de {} lettres, commencant par {}'.format(len(wd), wd[0]))
+        if fileOutput=='True':
+            log.write(len(wd), wd[0])
+            close(log)
         verif=[]
         usr=raw_input('entrer un mot : ')
         pos=[]
@@ -154,10 +150,57 @@ if testAll=='True':
                         rm=pos.index(usr1[i])
                         pos[rm]=1
                 print(verif)
+                if fileOutput=='True':
+                    log.write(''.join(verif))
+                    close(log)
             else:
                 print('\'\'')
+                if fileOutput=='True':
+                    log.write('\'\'')
+                    close.log
             if debug=='True':
                 if usr=='SOLUCE':
                     print(wd)
             tr=(tr+1)
         print('C\'est bien {}, trouve en {} essais.'.format(usr, tr))
+        if fileOutput=='True':
+            essais.write(urs+':'+tr)
+else:
+    while usr!=wd:
+        log=open('log.txt', 'w')
+        verif=[]
+        pos=[]
+        usr1=[]
+        usr=raw_input('entrer un mot : ')
+        if usr in list:
+            for i in range(0, len(wd)):
+                pos.append(wd[i])
+                usr1.append(usr[i])
+            for i in range(0, len(wd)):
+                if wd[i]==usr[i]:
+                    verif.append(2)
+                    pos[i]=0
+                    usr1[i]=2
+                else:
+                    verif.append(0)
+            for i in range(0, len(pos)):
+                if usr1[i] in pos:
+                    verif[i]=1
+                    rm=pos.index(usr1[i])
+                    pos[rm]=1
+            print(verif)
+            if fileOutput=='True':
+                log.write(''.join(verif))
+                close(log)
+        else:
+            print('\'\'')
+            if fileOutput=='True':
+                log.write('\'\'')
+                close.log
+        if debug=='True':
+            if usr=='SOLUCE':
+                print(wd)
+        tr=(tr+1)
+print('C\'est bien {}, trouve en {} essais.'.format(usr, tr))
+if fileOutput=='True':
+    essais.write(urs+':'+tr)

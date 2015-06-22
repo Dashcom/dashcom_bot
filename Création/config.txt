@@ -1,4 +1,5 @@
 debug:ON
 testAll:ON
 fileOutput:ON
+sync:ON
 dont delete this line
