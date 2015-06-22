@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 import numpy
+import time
 from numpy import random
 debug='False'
 testAll='False'
