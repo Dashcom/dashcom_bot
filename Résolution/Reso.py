@@ -3,7 +3,7 @@ nope=[]
 l12={}
 L=raw_input("Premiere lettre : ")
 N=input("Nombre de lettres : ")
-dico=open('Dico8.txt', 'r')
+dico=open('Dico_final.txt', 'r')
 dico=(dico.readline()).split()
 dico2=dico[:]
 for x in range(0, len(dico)):
@@ -90,5 +90,5 @@ if len(nope)>0:
 			if dico[x]==nope[y]:
 				dico2.remove(dico[x])
 dico2.sort()
-dico3=open("Dico8.txt",'w')
+dico3=open("Dico_final.txt",'w')
 dico3.write(" ".join(dico2))
