@@ -97,7 +97,8 @@ if testAll=='True':
             log.write('{}, {}'.format(len(wd),wd[0]))
             log.close()
         verif=[]
-        usr=raw_input('entrer un mot : ')
+        if fileOutput=='False':
+            usr=raw_input('entrer un mot : ')
         pos=[]
         usr1=[]
         if debug=='True':
@@ -132,7 +133,8 @@ if testAll=='True':
             verif=[]
             pos=[]
             usr1=[]
-            usr=raw_input('entrer un mot : ')
+            if fileOutput=='False':
+                usr=raw_input('entrer un mot : ')
             if usr in list:
                 for i in range(0, len(wd)):
                     pos.append(wd[i])
