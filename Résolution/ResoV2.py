@@ -2,7 +2,7 @@
 liste=[]
 nope=[]
 l12={}
-I=open('../Création/log.txt','r').readline().replace('\n','').split(',')
+I=open('../Création/log.txt','r').readline().replace('\n','').split(', ')
 # -*- coding: ASCII -*-
 L=I[1]
 N=int(I[0])
