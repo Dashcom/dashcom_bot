@@ -4,6 +4,7 @@ from numpy import random
 debug='False'
 testAll='False'
 fileOutput='False'
+sync='False'
 try:
     config=open('config.txt', 'r').readlines()
     if 'debug:ON\n' in config:
@@ -40,8 +41,8 @@ letter=0
 tr=1
 print('Mot de {} lettres, commencant par {}'.format(len(wd), wd[0]))
 if fileOutput=='True':
-    log.write(len(wd), wd[0])
-    close(log)
+    log.write('{}, {}'.format(len(wd),wd[0]))
+    log.close()
 verif=[]
 if fileOutput=='False':
     usr=raw_input('entrer un mot : ')
@@ -72,18 +73,17 @@ if usr in list:
     print(verif)
     if fileOutput=='True':
         log.write(''.join(verif))
-        close(log)
+        log.close()
 else:
     print('\'\'')
     if fileOutput=='True':
         log.write('\'\'')
-        close.log
+        log.close()
 if debug=='True':
     if usr=='SOLUCE':
         print(wd)
     if usr=='DEFINE':
         wd=raw_input('wd ?')
-print('C\'est bien {}, trouve en {} essais.'.format(usr, tr))
 if fileOutput=='True':
     essais.write(urs+':'+tr)
 if testAll=='True':
@@ -94,8 +94,8 @@ if testAll=='True':
         #nécessité de modifier les print en envoi de tweet
         print('Mot de {} lettres, commencant par {}'.format(len(wd), wd[0]))
         if fileOutput=='True':
-            log.write(len(wd), wd[0])
-            close(log)
+            log.write('{}, {}'.format(len(wd),wd[0]))
+            log.close()
         verif=[]
         usr=raw_input('entrer un mot : ')
         pos=[]
@@ -152,12 +152,12 @@ if testAll=='True':
                 print(verif)
                 if fileOutput=='True':
                     log.write(''.join(verif))
-                    close(log)
+                    log.close()
             else:
                 print('\'\'')
                 if fileOutput=='True':
                     log.write('\'\'')
-                    close.log
+                    log.close()
             if debug=='True':
                 if usr=='SOLUCE':
                     print(wd)
@@ -191,12 +191,12 @@ else:
             print(verif)
             if fileOutput=='True':
                 log.write(''.join(verif))
-                close(log)
+                log.close()
         else:
             print('\'\'')
             if fileOutput=='True':
                 log.write('\'\'')
-                close.log
+                log.close()
         if debug=='True':
             if usr=='SOLUCE':
                 print(wd)

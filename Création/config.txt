@@ -1,5 +1,5 @@
-debug:ON
-testAll:ON
-fileOutput:ON
-sync:ON
+debug:OFF
+testAll:OFF
+fileOutput:OFF
+sync:OFF
 dont delete this line
