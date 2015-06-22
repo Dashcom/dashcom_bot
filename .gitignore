@@ -2,5 +2,6 @@
 *.pyc
 __pycache__
 config.txt
-log.txt
-log2.txt
+Création/log.txt
+Résolution/log2.txt
+Création/config.txt
