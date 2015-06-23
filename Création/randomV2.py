@@ -51,8 +51,10 @@ verif=[]
 if fileOutput=='False':
     usr=raw_input('entrer un mot : ')
 if fileOutput=='True' and sync=='True':
-    time.sleep(0,5)
-    usr=syncfile.readline()
+    time.sleep(0.5)
+    usr='azer'
+    while len(usr)<5:
+        usr=open('../Résolution/log2.txt', 'r').readline()
 pos=[]
 usr1=[]
 if debug=='True':
@@ -110,7 +112,10 @@ if testAll=='True':
         if fileOutput=='False':
             usr=raw_input('entrer un mot : ')
         if fileOutput=='True' and sync=='True':
-            usr=syncfile.readline()
+            time.sleep(0.5)
+            usr='azer'
+            while len(usr)<5:
+                usr=open('../Résolution/log2.txt', 'r').readline()
         pos=[]
         usr1=[]
         if debug=='True':
@@ -148,8 +153,10 @@ if testAll=='True':
             if fileOutput=='False':
                 usr=raw_input('entrer un mot : ')
             if fileOutput=='True' and sync=='True':
-                time.sleep(0,5)
-                usr=syncfile.readline()
+                time.sleep(0.5)
+                usr='azer'
+                while len(usr)<5:
+                    usr=open('../Résolution/log2.txt', 'r').readline()
             if usr in liste:
                 for i in range(0, len(wd)):
                     pos.append(wd[i])
@@ -168,8 +175,11 @@ if testAll=='True':
                         pos[rm]=1
                 print(verif)
                 if fileOutput=='True':
-                    log.write(''.join(verif))
-                    log.close()
+					for i in range(0,len(verif)):
+						verif[i]=str(verif[i])
+					verif="".join(verif)
+					log.write(verif)
+					log.close()
             else:
                 print('\'\'')
                 if fileOutput=='True':
@@ -191,8 +201,10 @@ else:
         if fileOutput=='False':
             usr=raw_input('entrer un mot : ')
         if fileOutput=='True' and sync=='True':
-            time.sleep(0,5)
-            usr=syncfile.readline()
+            time.sleep(0.5)
+            usr='azer'
+            while len(usr)<5:
+                usr=open('../Résolution/log2.txt', 'r').readline()
         if usr in liste:
             for i in range(0, len(wd)):
                 pos.append(wd[i])
@@ -211,9 +223,11 @@ else:
                     pos[rm]=1
             print(verif)
             if fileOutput=='True':
-                log=open('log.txt', 'w')
-                log.write(''.join(verif))
-                log.close()
+				for i in range(0,len(verif)):
+					verif[i]=str(verif[i])
+				log=open('log.txt', 'w')
+				log.write(''.join(verif))
+				log.close()
         else:
             print('\'\'')
             if fileOutput=='True':

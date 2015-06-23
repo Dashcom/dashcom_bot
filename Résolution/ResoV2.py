@@ -1,8 +1,12 @@
 # -*- coding: UTF-8 -*-
+import time
 liste=[]
 nope=[]
 l12={}
-I=open('../Création/log.txt','r').readline().replace('\n','').split(',')
+I=[]
+open('log2.txt', 'w').write('')
+while len(I)!=2:
+	I=open('../Création/log.txt','r').readline().replace('\n','').split(', ')
 # -*- coding: ASCII -*-
 L=I[1]
 N=int(I[0])
@@ -40,7 +44,9 @@ while len(liste)>1:
 			M=x
 	open('log2.txt', 'w').write(liste[M])
 	# -*- coding: UTF-8 -*-
-	R=open('../Création/log.txt','r').readline()
+	R=[]
+	while len(R)!=N:
+		R=open('../Création/log.txt','r').readline()
 	# -*- coding: ASCII -*-
 	liste2=[]
 	for x in range(0,len(liste)):
