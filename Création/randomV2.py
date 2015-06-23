@@ -175,11 +175,11 @@ if testAll=='True':
                         pos[rm]=1
                 print(verif)
                 if fileOutput=='True':
-					for i in range(0,len(verif)):
-						verif[i]=str(verif[i])
-					verif="".join(verif)
-					log.write(verif)
-					log.close()
+                    for i in range(0,len(verif)):
+                        verif[i]=str(verif[i])
+                    verif="".join(verif)
+                    log.write(verif)
+                    log.close()
             else:
                 print('\'\'')
                 if fileOutput=='True':
@@ -223,11 +223,11 @@ else:
                     pos[rm]=1
             print(verif)
             if fileOutput=='True':
-				for i in range(0,len(verif)):
-					verif[i]=str(verif[i])
-				log=open('log.txt', 'w')
-				log.write(''.join(verif))
-				log.close()
+                for i in range(0,len(verif)):
+                    verif[i]=str(verif[i])
+                log=open('log.txt', 'w')
+                log.write(''.join(verif))
+                log.close()
         else:
             print('\'\'')
             if fileOutput=='True':
