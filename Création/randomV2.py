@@ -10,18 +10,18 @@ syncfile=open('../Résolution/log2.txt', 'r')
 log=open('log.txt', 'w')
 essais=open('essais.txt','a')
 try:
-	config=open('config.txt', 'r').readlines()
-	if 'debug:ON\n' in config:
-		debug='True'
-	if 'testAll:ON\n' in config:
-		testAll='True'
-	if 'fileOutput:ON\n' in config:
-		fileOutput='True'
-		log=open('log.txt', 'w')
-		essais=open('essais.txt','a')
-	if 'sync:On\n' in config:
-		sync='True'
-		try:
+    config=open('config.txt', 'r').readlines()
+    if 'debug:ON\n' in config:
+        debug='True'
+    if 'testAll:ON\n' in config:
+        testAll='True'
+    if 'fileOutput:ON\n' in config:
+        fileOutput='True'
+        log=open('log.txt', 'w')
+        essais=open('essais.txt','a')
+    if 'sync:On\n' in config:
+        sync='True'
+        try:
             syncfile=open('../Résolution/log2.txt', 'r')
         except NameError:
             sync='False'
