@@ -49,7 +49,7 @@ if fileOutput=='True':
     log.close()
 verif=[]
 if fileOutput=='False':
-    usr=raw_input('entrer un mot : ')
+    usr=str(input('entrer un mot : '))
 if fileOutput=='True' and sync=='True':
     time.sleep(0.5)
     usr='azer'
@@ -59,8 +59,8 @@ pos=[]
 usr1=[]
 if debug=='True':
     if usr=='DEFINE':
-        wd=raw_input('wd ?')
-        usr=raw_input('entrer un mot : ')
+        wd=str(input('wd ?'))
+        usr=str(input('entrer un mot : '))
 if usr in liste:
     for i in range(0, len(wd)):
         pos.append(wd[i])
@@ -95,7 +95,7 @@ if debug=='True':
     if usr=='SOLUCE':
         print(wd)
     if usr=='DEFINE':
-        wd=raw_input('wd ?')
+        wd=str(input('wd ?'))
 if fileOutput=='True':
     essais.write('{}:{}'.format(usr,tr))
 if testAll=='True':
@@ -110,7 +110,7 @@ if testAll=='True':
             log.close()
         verif=[]
         if fileOutput=='False':
-            usr=raw_input('entrer un mot : ')
+            usr=str(input('entrer un mot : '))
         if fileOutput=='True' and sync=='True':
             time.sleep(0.5)
             usr='azer'
@@ -120,8 +120,8 @@ if testAll=='True':
         usr1=[]
         if debug=='True':
             if usr=='DEFINE':
-                wd=raw_input('wd ?')
-                usr=raw_input('entrer un mot : ')
+                wd=str(input('wd ?'))
+                usr=str(input('entrer un mot : '))
         if usr in liste:
             for i in range(0, len(wd)):
                 pos.append(wd[i])
@@ -145,13 +145,13 @@ if testAll=='True':
             if usr=='SOLUCE':
                 print(wd)
             if usr=='DEFINE':
-                wd=raw_input('wd ?')
+                wd=str(input('wd ?'))
         while usr!=wd:
             verif=[]
             pos=[]
             usr1=[]
             if fileOutput=='False':
-                usr=raw_input('entrer un mot : ')
+                usr=str(input('entrer un mot : '))
             if fileOutput=='True' and sync=='True':
                 time.sleep(0.5)
                 usr='azer'
@@ -199,7 +199,7 @@ else:
         pos=[]
         usr1=[]
         if fileOutput=='False':
-            usr=raw_input('entrer un mot : ')
+            usr=str(input('entrer un mot : '))
         if fileOutput=='True' and sync=='True':
             time.sleep(0.5)
             usr='azer'
