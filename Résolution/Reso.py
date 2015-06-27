@@ -1,8 +1,8 @@
 liste=[]
 nope=[]
 l12={}
-L=raw_input("Premiere lettre : ")
-N=input("Nombre de lettres : ")
+L=input("Premiere lettre : ")
+N=int(input("Nombre de lettres : "))
 dico=open('Dico_final.txt', 'r')
 dico=(dico.readline()).split()
 dico2=dico[:]
@@ -36,7 +36,7 @@ while len(liste)>1:
 		if S[x]>S[M]:
 			M=x
 	print(liste[M])
-	R=str(input())
+	R=input()
 	if R=='':
 		nope.append(liste[M])
 		del liste[M]
@@ -82,7 +82,7 @@ if len(liste)>0:
 	print(liste[0])
 else:
 	print("Le mot n'est pas dans le dictionnaire.")
-	aj=raw_input("Quel est ce mot ? : ")
+	aj=input("Quel est ce mot ? : ")
 	dico2.append(aj)
 if len(nope)>0:
 	for x in range(0, len(dico)):
