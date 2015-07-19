@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from twitter import *
 import time
-t = Twitter(auth=OAuth('3317742490-zqNpj2mpDwITlQBYKIyrq1502JdFz7TxLepsSMS', 'xR0ZZYUo7KNDDUfqEIjnWFeRFU3QPdlNg9DaDoZOIxldu','S7W5CAI4By9BajqgQCU908kpm', 'G1uPkp3WRdThSOmlYH664aatT3UtdaJWnloeO3cGcEmjvAuAT6'))
+t = Twitter(auth=OAuth('Acess Token', 'Token Secret','Consumer Key', 'Consumer Secret'))
 import numpy
 from numpy import random
 dico=open('../Résolution/Dico_final.txt', 'r')
